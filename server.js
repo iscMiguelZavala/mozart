@@ -6,6 +6,7 @@ const topojson = require('topojson-client');
 
 const app = expres();
 
+const PORT = process.env.PORT || 3000;
 
 // Arrow function ()=>{}
 app.get('/',function(req,res){
@@ -82,7 +83,7 @@ res.status(200).json({
 app.use('/api/v1', apiV1);
 app.use('/api/v2', apiV2);
 
-const PORT = 3000;
+
 
 app.listen(PORT, ()=>{
     console.log(`Server listening on port ${PORT}`);

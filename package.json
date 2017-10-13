@@ -4,17 +4,16 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-
     "start": "node server.js",
     "dev": "nodemon server.js",
     "watch": "webpack --config webpack.config.js --progress --watch --optimize-minimize"
   },
-"babel":{
-  "presets":[
-    "es2015",
-    "react"
-  ]
-},
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
   "author": "Miguel",
   "license": "MIT",
   "dependencies": {

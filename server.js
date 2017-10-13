@@ -1,19 +1,15 @@
 const expres = require("express");
 const path = require("path");
-const favicon = require("serve-favicon");
 const fs = require('fs');
 const https = require('https');
 const topojson = require('topojson-client');
 
 const app = expres();
 
-app.use(expres.static(path.join(__dirname,"dist")));
-
-app.use(favicon(path.join(__dirname,"dist","Mario.ico")));
 
 // Arrow function ()=>{}
 app.get('/',function(req,res){
-    res.sendFile('index.html');
+    res.send("Bienvenidos a la geo api")
 });
 
 var apiV1 = expres.Router();
@@ -23,7 +19,7 @@ apiV1.get('/paises/estados/ciudades', function(req,res){
     var ciudades = [];
     var worldData = []
     var worldJson = 'https://unpkg.com/world-atlas@1.1.4/world/110m.json';
-    fs.readFile('dist/cities.json','UTF-8' ,function (err, data){
+    fs.readFile('data/cities.json','UTF-8' ,function (err, data){
         //console.log(err,data);
         ciudades = JSON.parse(data).states;
 

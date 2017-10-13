@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 app.use(function (req, res, next) {
-    res.setHeader('Acces-Control-Origin', '*');
-    res.setHeader('Acces-Control-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
     next();
 });
 
